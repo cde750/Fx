@@ -72,7 +72,7 @@ def combos_df(combos, base, quote):
         f"Nominal {base}": c.base_notional,
         f"Nominal {quote}": c.quote_notional,
         "Erreur %": c.error_pct * 100,
-        "Résiduel USD": c.residual_usd,
+        "Exposition USD nette": c.residual_usd,
     } for c in combos])
 
 def expo_label(x: float) -> str:
