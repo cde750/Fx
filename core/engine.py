@@ -66,7 +66,7 @@ def build_combos(base, quote, prices, max_lots=50, direction=1):
         usd_long = bn * prices[base]
         usd_short = qn * prices[quote]
         err = (m - r * n) / (r * n)
-        resid = -direction * (usd_long - usd_short)
+        resid = direction * (usd_short - usd_long)   # >0 = long USD, <0 = short USD
         out.append(Combo(base, quote, direction * n, -direction * m,
                          bn, qn, err, resid, qn / bn))
     return out
