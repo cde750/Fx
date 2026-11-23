@@ -97,7 +97,7 @@ with tab_build:
     base = c1.selectbox("Devise de base", CURRENCIES, index=1)
     quote = c2.selectbox("Devise de cotation", CURRENCIES, index=3)
     sens = c3.selectbox("Sens", ["Achat", "Vente"])
-    max_lots = c4.slider("Lots max (base)", 1, 200, 50)
+    max_lots = c4.slider("Lots max (base)", 1, 100, 10)
     direction = 1 if sens == "Achat" else -1
 
     if base == quote:
@@ -198,7 +198,7 @@ with tab_pnl:
 # =================== VUE DEPUIS UNE DEVISE ===================
 with tab_matrix:
     ref = st.selectbox("Devise de référence", CURRENCIES, index=1, key="ref")
-    ml = st.slider("Lots max", 1, 200, 50, key="ml")
+    ml = st.slider("Lots max", 1, 100, 10, key="ml")
     rows = []
     for ccy in CURRENCIES:
         if ccy == ref:
