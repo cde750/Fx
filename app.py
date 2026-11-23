@@ -78,7 +78,9 @@ def combos_df(combos, base, quote):
 def expo_label(x: float) -> str:
     if abs(x) < 1:
         return "Neutre"
-    return f"{'Long' if x > 0 else 'Short'} USD {abs(x):,.0f} $"DF_FMT = {"Erreur %": st.column_config.NumberColumn(format="%.3f %%"),
+    return f"{'Long' if x > 0 else 'Short'} USD {abs(x):,.0f} $"
+
+DF_FMT = {"Erreur %": st.column_config.NumberColumn(format="%.3f %%"),
           "Résiduel USD": st.column_config.NumberColumn(format="%,.0f $")}
 
 # ---------- En-tête ----------
